@@ -10,7 +10,7 @@ function mergeAppWebpackConfig(config) {
   // TODO: refactor these two lines
   config.resolve.alias = config.resolve.alias || {}
   Object.assign(config.resolve.alias, {
-    '@jabardigitalservice/jds-design-system': path.resolve(__dirname, 'publish')
+    '@danzf/bwi-design': path.resolve(__dirname, 'publish')
   })
 }
 
@@ -18,7 +18,7 @@ function mergeWebComponentWebpackConfig(config) {
   // TODO: refactor these two lines
   config.resolve.alias = config.resolve.alias || {}
   Object.assign(config.resolve.alias, {
-    '@jabardigitalservice/jds-design-system': path.resolve(__dirname, 'publish')
+    '@danzf/bwi-design': path.resolve(__dirname, 'publish')
   })
 
   const styleRules = config.module.rules.filter((rule) => {
@@ -78,7 +78,7 @@ module.exports = {
       entry: 'playgrounds/vue/main.js',
       template: 'playgrounds/vue/public/index.html',
       filename: 'index.html',
-      title: 'Jabar Design System Vue Playground',
+      title: 'Bwi Design Playground',
     },
   },
   outputDir: 'dist',

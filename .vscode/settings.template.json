@@ -1,5 +1,5 @@
 {
   "path-intellisense.mappings": {
-    "@jabardigitalservice/jds-design-system": "${workspaceFolder}/publish"
+    "@danzf/bwi-design": "${workspaceFolder}/publish"
   }
 }

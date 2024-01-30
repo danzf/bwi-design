@@ -1,27 +1,27 @@
 {
-  "name": "@jabardigitalservice/jds-design-system",
+  "name": "@danzf/bwi-design",
   "version": "0.0.3-beta.5",
-  "description": "Jabar Digital Service Design System",
+  "description": "Bwi Digital Service Design System",
   "private": false,
   "license": "MIT",
   "author": {
-    "name": "Jabar Digital Service",
-    "email": "digital.service@jabarprov.go.id",
-    "url": "https://digitalservice.jabarprov.go.id/"
+    "name": "Bwi Digital Service",
+    "email": "disbudparteam@gmail.go.id",
+    "url": "https://museum.banyuwangikab.go.id/"
   },
   "repository": {
-    "url": "https://github.com/jabardigitalservice/jds-design-system-vue-lib",
+    "url": "https://github.com/danzf/bwi-design",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/jabardigitalservice/jds-design-system-vue-lib/issues"
+    "url": "https://github.com/danzf/bwi-design/issues"
   },
   "keywords": [
     "Design System",
     "Javascript",
     "VueJs",
     "Storybook",
-    "Jabar Digital Service"
+    "Bwi Digital Service"
   ],
   "main": "esm/index.js",
   "module": "esm/index.js",

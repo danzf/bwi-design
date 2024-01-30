@@ -23,7 +23,7 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = config.resolve.alias || {}
     Object.assign(config.resolve.alias, {
-      '@jabardigitalservice/jds-design-system/icons': path.resolve(__dirname, '../src/assets/icons'),
+      '@danzf/bwi-design/icons': path.resolve(__dirname, '../src/assets/icons'),
     })
 
     config.resolve.extensions.push('.svg')
