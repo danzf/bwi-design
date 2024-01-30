@@ -16,32 +16,32 @@
 
   &--primary{
     border: none;
-    background-color: V.$green-700;
+    background-color: V.$blue-700;
     color: white;
 
     &:hover{
-      background-color: V.$green-800;
+      background-color: V.$blue-800;
     }
   
     &:active{
-      background-color: V.$green-700;
+      background-color: V.$blue-700;
       margin: 1px;
       padding: 8px 15px;
     }
   
     &:focus{
-      box-shadow: inset 0px 0px 0px 1px V.$green-800, inset 0px 0px 0px 2px V.$yellow-500;          
+      box-shadow: inset 0px 0px 0px 1px V.$blue-800, inset 0px 0px 0px 2px V.$yellow-500;          
     }
   }
 
 
   &--secondary{
-    border: 1px solid V.$green-800;
+    border: 1px solid V.$blue-800;
     background-color: transparent;
-    color: V.$green-800;
+    color: V.$blue-800;
 
     &:hover{
-      background-color: V.$green-50;
+      background-color: V.$blue-50;
     }
 
     &:active{
@@ -50,8 +50,8 @@
     }
 
     &:focus{
-      background-color: V.$green-50;
-      box-shadow: inset 0px 0px 0px 1px V.$green-50,
+      background-color: V.$blue-50;
+      box-shadow: inset 0px 0px 0px 1px V.$blue-50,
                   inset 0px 0px 0px 2px V.$yellow-500;          
     }
   }
@@ -59,20 +59,20 @@
   &--tertiary{
     border: none;
     background-color: transparent;
-    color: V.$green-800;
+    color: V.$blue-800;
 
     &:hover{
-      background-color: V.$green-50;
+      background-color: V.$blue-50;
     }
 
     &:active{
-      background-color: V.$green-100;
+      background-color: V.$blue-100;
       margin: 1px;
       padding: 8px 15px;
     }
 
     &:focus{
-      box-shadow: inset 0px 0px 0px 1px V.$green-50,
+      box-shadow: inset 0px 0px 0px 1px V.$blue-50,
                   inset 0px 0px 0px 2px V.$yellow-500;          
     }
   }
@@ -81,20 +81,20 @@
     border: none;
     padding: 3px 4px;
     background-color: transparent;
-    color: V.$green-800;
+    color: V.$blue-800;
 
     &:hover{
-      background-color: V.$green-50;
+      background-color: V.$blue-50;
     }
 
     &:active{
-      background-color: V.$green-100;
+      background-color: V.$blue-100;
       margin: 1px;
       padding: 2px 3px;
     }
 
     &:focus{
-      box-shadow: inset 0px 0px 0px 1px V.$green-50,
+      box-shadow: inset 0px 0px 0px 1px V.$blue-50,
                   inset 0px 0px 0px 2px V.$yellow-500;          
     }
   }
