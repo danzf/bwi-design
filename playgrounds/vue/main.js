@@ -1,6 +1,6 @@
+import '@danzf/bwi-design/css/bwi-design-system.css'
 import Vue from 'vue'
 import App from './App.vue'
-import '@danzf/bwi-design/css/jds-design-system.css'
 
 /** 
  * register all components globally using Plugin
@@ -12,8 +12,8 @@ Vue.use(DesignSystem)
  * register component ala carte
  */
 // import { Button } from '@danzf/bwi-design/esm'
-// Vue.component('JdsButton', Button)
-// Vue.component('JdsInputText', InputText)
+// Vue.component('BwiButton', Button)
+// Vue.component('BwiInputText', InputText)
 
 new Vue({
   el: '#app',

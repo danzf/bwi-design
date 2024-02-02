@@ -1,4 +1,4 @@
-# jds-design-system-vue-lib
+# bwi-design-system-vue-lib
 
 ## Project setup
 ```
@@ -32,3 +32,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+npm publish --access=public

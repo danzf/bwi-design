@@ -1,6 +1,6 @@
 {
   "name": "@danzf/bwi-design",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2-beta.6",
   "description": "Bwi Digital Service Design System",
   "private": false,
   "license": "MIT",
@@ -21,7 +21,7 @@
     "Javascript",
     "VueJs",
     "Storybook",
-    "Bwi Digital Service"
+    "Bwi Coding"
   ],
   "main": "esm/index.js",
   "module": "esm/index.js",

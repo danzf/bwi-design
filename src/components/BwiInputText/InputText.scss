@@ -1,0 +1,146 @@
+@use '../../../styles/scss/variables' as V;
+
+@mixin set-input-bg-color($color) {
+  .bwi-input-text__input-wrapper {
+    background-color: $color;
+  }
+}
+
+@mixin set-input-border-color($color) {
+  .bwi-input-text__input-wrapper {
+    border-color: $color;
+  }
+}
+
+@mixin toggle-input-inset-shadow($toggle) {
+  .bwi-input-text__input-wrapper::after {
+    @if ($toggle) {
+      opacity: 1;
+    } @else {
+      opacity: 0;
+    }
+  }
+}
+
+.bwi-input-text {
+  height: 100%;
+  display: inline-block;
+  font-size: 1em;
+  
+  * {
+    font-family: inherit;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    height: 36px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+
+    transition-property: border-color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+  }
+
+  &__input-wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 7px;
+    pointer-events: none;
+    box-shadow: inset 0px 0px 0px 1px V.$yellow-500;
+    
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+  }
+
+  input {
+    max-width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    flex: 1 1 auto;
+    padding: 0 8px;
+    background-color: transparent;
+    color: V.$gray-800;
+
+    font-size: inherit;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: V.$gray-600;
+    }
+  }
+
+  &__prefix-icon,
+  &__suffix-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__prefix-icon {
+    padding-left: 8px;
+  }
+  &__suffix-icon {
+    padding-right: 8px;
+  }
+}
+
+.bwi-input-text {
+  @include set-input-border-color(V.$gray-500);
+  @include set-input-bg-color(V.$white);
+
+  &--empty {
+    @include set-input-bg-color(V.$gray-50);
+  }
+  
+  &--hovered {
+    @include set-input-border-color(V.$blue-700);
+  }
+  
+  &--focused:not(&--error) {
+    @include set-input-border-color(V.$blue-700);
+    @include toggle-input-inset-shadow(true);
+  }
+
+  &:not(&--focused) {
+    @include toggle-input-inset-shadow(false);
+  }
+
+
+  &--disabled {
+    @include set-input-bg-color(V.$gray-200);
+
+    &,
+    & * {
+      pointer-events: none;
+    }
+
+    input {
+      color: V.$gray-400;
+    }
+  }
+  
+  &--error {
+    @include set-input-border-color(V.$red-700);
+  }
+}

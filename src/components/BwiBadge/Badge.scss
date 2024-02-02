@@ -1,0 +1,197 @@
+@use '../../../styles/scss/variables' as V;
+@use 'sass:math' as Math;
+@use 'sass:map' as Map;
+
+$--badge-size: (
+  xs: 10px,
+  sm: 14px,
+  md: 18px,
+  lg: 24px,
+  xl: 32px,
+);
+
+@mixin set-indicator-color($color) {
+  .bwi-badge__indicator {
+    background-color: $color;
+  }
+}
+
+@mixin set-indicator-styles($name, $setDefault: false) {
+  $size: Map.get($--badge-size, $name);
+  $modifier: '.bwi-badge--#{$name}';
+
+  @if $setDefault {
+    $modifier: '';
+  }
+
+  // when set to default, selector is `.bwi-badge`
+  // otherwise, selector is, for example, `.bwi-badge.bwi-badge--xs`
+  &#{$modifier} {
+    .bwi-badge__indicator {
+      width: $size;
+      height: $size;
+      font-size: inherit;
+
+      > * {
+        font-size: Math.div($size, 2);
+      }
+    }
+    &.bwi-badge--top {
+      .bwi-badge__indicator {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  // when set to default, selector is `.bwi-badge`
+  // otherwise, selector is, for example, `.bwi-badge.bwi-badge--xs`
+  &#{$modifier}.bwi-badge--inline {
+    &.bwi-badge--hidden {
+      &.bwi-badge--left {
+        margin-left: $size * -1;
+      }
+      &.bwi-badge--right {
+        margin-right: $size * -1;
+      }
+    }
+  }
+}
+
+.bwi-badge {
+  position: relative;
+  display: inline-flex;
+  flex-flow: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  transition: margin 0.15s linear;
+
+  &__body {
+    display: inline-flex;
+    flex-flow: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__indicator {
+    overflow: hidden;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9999px;
+    
+    color: white;
+    font-weight: 500;;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    line-height: 0;
+
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-property: opacity, transform;
+  }
+
+  &:not(&--left) &,
+  &--right & {
+    &__indicator {
+      left: 100%;
+    }
+  }
+  &--left & {
+    &__indicator {
+      right: 100%;
+    }
+  }
+
+  &--hidden & {
+    &__indicator {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  &--dot & {
+    &__indicator > * {
+      display: none;
+    }
+  }
+
+  &.bwi-badge--top,
+  &.bwi-badge--middle {
+    &.bwi-badge--left {
+      .bwi-badge__indicator {
+        margin-right: 0.25rem;
+      }
+    }
+    &.bwi-badge--right {
+      .bwi-badge__indicator {
+        margin-left: 0.25rem;
+      }
+    }
+  }
+
+  &.bwi-badge--inline {
+    .bwi-badge__indicator {
+      position: relative;
+      left: unset;
+      right: unset;
+      margin-bottom: 0;
+    }
+
+    &.bwi-badge--left {
+      .bwi-badge__body {
+        order: 1;
+      }
+      .bwi-badge__indicator {
+        order: 0;
+      }
+    }
+    &.bwi-badge--right {
+      .bwi-badge__body {
+        order: 0;
+      }
+      .bwi-badge__indicator {
+        order: 1;
+      }
+    }
+
+    &:not(.bwi-badge--hidden) {
+      transition-delay: 0s;
+      .bwi-badge__indicator {
+        transition-delay: 0.15s;
+      }
+    }
+    &.bwi-badge--hidden {
+      transition-delay: 0.15s;
+      .bwi-badge__indicator {
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &--red {
+    @include set-indicator-color(V.$red-600);
+  }
+  &--blue-gray {
+    @include set-indicator-color(V.$blue-gray-600);
+  }
+  &--blue {
+    @include set-indicator-color(V.$blue-600);
+  }
+
+  &#{&}--dot {
+    @include set-indicator-styles($name: 'xs', $setDefault: true);
+  }
+
+  & {
+    @include set-indicator-styles($name: 'md', $setDefault: true);
+    @include set-indicator-styles('xs');
+    @include set-indicator-styles('sm');
+    @include set-indicator-styles('md');
+    @include set-indicator-styles('lg');
+    @include set-indicator-styles('xl');
+  }
+}

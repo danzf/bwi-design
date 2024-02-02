@@ -1,0 +1,44 @@
+@use '../../../styles/scss/variables' as V;
+
+.bwi-checkbox {
+  position: relative;
+  display: inline-block;
+
+  &__checkbox-wrapper {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__option-label {
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    line-height: 23px;
+    font-size: 15px;
+    color: V.$gray-800;
+    margin-left: 8px;
+  }
+
+  &--error#{&}--error-line {
+    transform: translateX(10px);
+
+    &::before {
+      visibility: visible;
+    }
+  }
+
+  &::before {
+    content: '';
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    width: 0;
+    display: inline-block;
+    border-right: 2px solid V.$red-600;
+    margin-right: 8px;
+  }
+}

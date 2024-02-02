@@ -1,0 +1,150 @@
+@use '../../../styles/scss/variables' as V;
+
+// set to (input text border-radius - 1px);
+$--border-radius: 7px;
+
+.bwi-input-text-edge {
+  position: relative;
+  flex: 0 0 auto;
+  display: inline-flex;
+  user-select: none;
+  
+  &__dropdown-trigger {
+    cursor: default;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    overflow: hidden;
+
+    background-color: V.$gray-100;
+    transition-property: background-color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: V.$gray-300;
+    }
+
+    > label {
+      color: V.$gray-800;
+      pointer-events: none;
+    }
+
+    &__icon {
+      pointer-events: none;
+      margin-left: 8px;
+      height: 16px;
+      width: auto;
+      object-fit: contain;
+      transition-property: transform;
+      transition-timing-function: ease-out;
+      transition-duration: 0.3s;
+      transform: rotate(0deg);
+    }
+  }
+
+  &__dropdown {
+    z-index: 5;
+    pointer-events: none;
+    list-style-type: none;
+
+    position: absolute;
+    display: block;
+    top: calc(100% + 6px);
+    height: auto;
+
+    background-color: V.$white;
+    color: V.$gray-800;
+
+    margin: 0;
+    padding: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
+    transition-property: transform, opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  &__dropdown-item {
+    pointer-events: all;
+    margin: 0;
+    padding: 0;
+
+    > a {
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      line-height: 1;
+      margin: 0;
+      padding: 8px 16px;
+      
+      &:hover {
+        background-color: V.$gray-300;
+      }
+    }
+
+  }
+
+  &--prefix {
+    border-right: 1px solid V.$gray-300;
+  }
+
+  &--prefix & {
+    &__dropdown-trigger {
+      border-top-left-radius: $--border-radius;
+      border-bottom-left-radius: $--border-radius;
+    }
+  
+    &__dropdown {
+      left: 0;
+    }
+  }
+
+  &--suffix {
+    border-left: 1px solid V.$gray-300;
+  }
+
+  &--suffix & {
+    &__dropdown-trigger {
+      border-top-right-radius: $--border-radius;
+      border-bottom-right-radius: $--border-radius;
+    }
+  
+    &__dropdown {
+      right: 0;
+    }
+  }
+
+  &--selectable & {
+    &__dropdown-trigger {
+      cursor: pointer;
+    }
+  }
+
+  &:not(&--dropdown-opened) & {
+    &__dropdown {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+    &__dropdown-item {
+      pointer-events: none;
+    }
+  }
+
+  &--dropdown-opened & {
+    &__dropdown-trigger {
+      background-color: V.$gray-300;
+
+      &__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
