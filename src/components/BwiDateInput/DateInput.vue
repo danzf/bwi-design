@@ -53,8 +53,8 @@ import localCopy from '../../mixins/local-copy'
 import { fnDate, imask } from '../../utils/date-input'
 import BwiCalendar from '../BwiCalendar'
 import {
-BwiFormControlErrorMessage,
-BwiFormControlLabel
+  BwiFormControlErrorMessage,
+  BwiFormControlLabel
 } from '../BwiFormControl'
 import BwiIcon from '../BwiIcon'
 import BwiPopover from '../BwiPopover'

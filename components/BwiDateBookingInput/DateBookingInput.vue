@@ -2,16 +2,16 @@
   <bwi-popover ref="popover" v-clickaway="onClickaway" :options="popperOptions">
     <template #activator="{ on }">
       <div :class="{
-        'bwi-date-input': true,
+        'bwi-date-booking-input': true,
         'font-sans-1': true,
       }">
         <bwi-form-control-label v-if="showLabel">
           {{ label }}
         </bwi-form-control-label>
         <div :class="{
-          'bwi-date-input__input': true,
-          'bwi-date-input__input--error': showErrorMsg,
-          'bwi-date-input__input--focus': isFocused,
+          'bwi-date-booking-input__input': true,
+          'bwi-date-booking-input__input--error': showErrorMsg,
+          'bwi-date-booking-input__input--focus': isFocused,
           }">
           <input
             type="text"
@@ -32,8 +32,8 @@
             name="calendar-date-outline" 
             size="18px"
             :class="{
-              'bwi-date-input__input-suffix-icon': true,
-              'bwi-date-input__input-suffix-icon--focus': isFocused,
+              'bwi-date-booking-input__input-suffix-icon': true,
+              'bwi-date-booking-input__input-suffix-icon--focus': isFocused,
             }
           "/>
         </div>
@@ -70,7 +70,7 @@ function isStringDefined(val) {
 }
 
 export default {
-  name: 'bwi-date-input',
+  name: 'bwi-date-booking-input',
   components: {
     BwiFormControlLabel,
     BwiFormControlErrorMessage,
@@ -108,6 +108,11 @@ export default {
         max: this.max ? fnDate.parseDate(this.max) : undefined,
       },
     };
+  },
+   watch: {
+    value : {
+      handler: 'syncPropValue'
+    }
   },
   computed: {
     showLabel() {

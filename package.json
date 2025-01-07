@@ -1,6 +1,6 @@
 {
   "name": "bwi-design",
-  "version": "0.0.2-beta.7",
+  "version": "0.0.2-beta.8",
   "private": true,
   "scripts": {
     "clean": "rm -rf publish/css publish/esm publish/wc",
@@ -12,8 +12,8 @@
     "build:esm": "node scripts/build-esm.js",
     "build:wc": "node scripts/build-wc.js",
     "build:app": "node scripts/build-app.js",
-    "playground:vue": "./node_modules/.bin/env-cmd -x vue-cli-service serve --port=\\$PLAYGROUND_VUE_PORT",
-    "playground:html": "./node_modules/.bin/env-cmd -x live-server --entry-file=./playgrounds/html/index.html --port=\\$PLAYGROUND_WC_PORT --ignore=./node_modules,./playgrounds/vue",
+    "playground:vue": "env-cmd -x vue-cli-service serve --port=\\$PLAYGROUND_VUE_PORT",
+    "playground:html": "env-cmd -x live-server --entry-file=./playgrounds/html/index.html --port=\\$PLAYGROUND_WC_PORT --ignore=./node_modules,./playgrounds/vue",
     "dev:esm": "node scripts/dev-esm.js",
     "dev:wc": "node scripts/dev-wc.js",
     "storybook": "concurrently \"npm run build:css:watch\" \"start-storybook -p 6006\"",
@@ -82,5 +82,17 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "New Update Booking Date ## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danzf/bwi-design.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danzf/bwi-design/issues"
+  },
+  "homepage": "https://github.com/danzf/bwi-design#readme"
 }

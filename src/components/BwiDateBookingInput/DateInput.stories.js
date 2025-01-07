@@ -1,5 +1,5 @@
 import storybookMixin from '../../utils/storybook'
-import BwiDateBookingInput from './BwiDateBookingInput.vue'
+import BwiDateBookingInput from './DateBookingInput.vue'
 
 export default {
   component: BwiDateBookingInput,

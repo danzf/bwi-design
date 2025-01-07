@@ -1,3 +1,3 @@
-import BwiDateBookingInput from './BwiDateBookingInput.vue'
+import BwiDateBookingInput from './DateBookingInput.vue'
 export { BwiDateBookingInput }
 export default BwiDateBookingInput
