@@ -30,3 +30,5 @@ pnpm-debug.log*
 # Playground files
 playgrounds/html/index.html
 playgrounds/vue/App.vue
+
+.codegpt
