@@ -2,7 +2,8 @@
 
 .bwi-select {
   height: 100%;
-  display: inline-block;
+  width: 100%;
+  display: block;
   position: relative;
 
   &,
@@ -17,7 +18,8 @@
   &__trigger-icon {
     color: V.$blue-700;
     height: 16px;
-    width: auto;
+    display: flex;
+    width: 100%;
     object-fit: contain;
     transition-property: transform;
     transition-timing-function: ease-out;
@@ -43,6 +45,8 @@
     .bwi-input-text__input-wrapper {
       &,
       &::after {
+        display: block;
+        max-width: 100%;
         border-radius: 0;
         border: none;
       }
