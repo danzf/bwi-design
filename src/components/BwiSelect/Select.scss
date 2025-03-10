@@ -9,10 +9,13 @@
   &,
   & * {
     cursor: pointer;
+    width: 100%;
+    display: block;
   }
 
   &__options {
     display: block;
+    width: 100%;
   }
 
   &__trigger-icon {
@@ -36,6 +39,8 @@
 // STATE
 .bwi-select {
   &--opened & {
+    display: block;
+    width: 100%;
     &__trigger-icon {
       transform: rotate(180deg);
     }
@@ -44,6 +49,8 @@
   &--tile {
     .bwi-input-text__input-wrapper {
       &,
+      display: block;
+      width: 100%;
       &::after {
         display: block;
         max-width: 100%;
