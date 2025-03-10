@@ -188,5 +188,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use './DateInput.scss';
+@use './DateBookingInput.scss';
 </style>

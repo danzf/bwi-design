@@ -3,7 +3,7 @@ import BwiDateBookingInput from './DateBookingInput.vue'
 
 export default {
   component: BwiDateBookingInput,
-  title: 'Components/DateInput',
+  title: 'Components/BwiDateBookingInput',
   argTypes:{
     responsiveness: 
     {
