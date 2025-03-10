@@ -5,12 +5,13 @@
   width: 100%;
   display: block;
   position: relative;
+  justify-content: space-between; // Pastikan ikon berada di ujung kanan
 
   &,
   & * {
     cursor: pointer;
     width: 100%;
-    display: block;
+    display: flex;
   }
 
   &__options {
@@ -21,8 +22,8 @@
   &__trigger-icon {
     color: V.$blue-700;
     height: 16px;
-    display: flex;
     width: 100%;
+    margin-left: auto; // Memindahkan ikon ke kanan
     object-fit: contain;
     transition-property: transform;
     transition-timing-function: ease-out;
