@@ -41,8 +41,9 @@
 // STATE
 .bwi-select {
   &--opened & {
-    display: block;
+    display: flex;
     width: 100%;
+    margin-left: auto;
     &__trigger-icon {
       transform: rotate(180deg);
     }
