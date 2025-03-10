@@ -205,8 +205,8 @@ export default {
       this.$refs.popover.close()
       this.maskRef.value = this.mValue
     },
-    onClickaway(){
-      this.$refs.popover.close()
+    onClickaway() {
+      this.$refs.popover.close();
     },
     onAccept(e){
       const maskRef = e.detail;
