@@ -48,9 +48,9 @@
 
   &--tile {
     .bwi-input-text__input-wrapper {
-      &,
       display: block;
       width: 100%;
+      &,
       &::after {
         display: block;
         max-width: 100%;
