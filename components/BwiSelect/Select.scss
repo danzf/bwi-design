@@ -3,27 +3,36 @@
 .bwi-select {
   height: 100%;
   width: 100%;
-  display: block;
+  display: flex;
   position: relative;
   justify-content: space-between; // Pastikan ikon berada di ujung kanan
 
-  &,
-  & * {
+  & {
     cursor: pointer;
     width: 100%;
     display: flex;
-    margin-left: auto;
+    align-items: center; // Pastikan konten sejajar dengan baik
+  }
+  & * {
+    width: auto;
+    display: flex;
+    margin-left: unset; // Hindari margin yang mendorong teks
+
   }
 
   &__options {
     display: block;
     width: 100%;
+    white-space: nowrap; // Hindari pemotongan teks jika memungkinkan
+    overflow: hidden; // Opsional jika masih ada pemotongan
+    text-overflow: ellipsis; // Tambahkan jika ingin teks terpotong dengan "..."
   }
 
   &__trigger-icon {
     color: V.$blue-700;
     height: 16px;
-    width: 100%;
+    width: auto;
+    flex-shrink: 0;
     margin-left: auto; // Memindahkan ikon ke kanan
     object-fit: contain;
     transition-property: transform;
