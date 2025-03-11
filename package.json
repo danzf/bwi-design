@@ -1,6 +1,6 @@
 {
   "name": "bwi-design",
-  "version": "0.0.2-beta.19",
+  "version": "0.0.2-beta.20",
   "private": false,
   "scripts": {
     "clean": "rm -rf publish/css publish/esm publish/wc",
